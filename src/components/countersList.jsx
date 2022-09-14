@@ -41,23 +41,23 @@ const CountersList = () => {
   };
 
   const handlerIncrement = (id) => {
-    const incrementValue = counters.map((counter) => {
+    const incrementArray = counters.map((counter) => {
       if (id === counter.id) {
         counter.value = counter.value + 1;
       }
       return counter;
     });
-    setCounter(incrementValue);
+    setCounter(incrementArray);
   };
 
   const handlerDecrement = (id) => {
-    const decrementValue = counters.map((counter) => {
+    const decrementArray = counters.map((counter) => {
       if (id === counter.id && counter.value > 0) {
         counter.value = counter.value - 1;
       }
       return counter;
     });
-    setCounter(decrementValue);
+    setCounter(decrementArray);
   };
 
   return (
