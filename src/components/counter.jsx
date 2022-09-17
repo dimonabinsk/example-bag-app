@@ -7,9 +7,7 @@ const styles = {
   },
 };
 
-const Counter = (props) => {
-  const { value } = props;
-
+const Counter = ({ value, name, id, onIncrement, onDecrement, onDelete }) => {
   const formatValue = () => {
     return value <= 0 ? "empty" : value;
   };
@@ -21,27 +19,27 @@ const Counter = (props) => {
 
   return (
     <div className="d-flex m-2 align-items-center shadow-sm p-1 ps-3">
-      <span className=" fs-3 w-50">{props.name}</span>
+      <span className=" fs-3 w-50">{name}</span>
       <span className={getBadgeClasses()} style={styles.badge}>
         {formatValue()}
       </span>
       <button
         className="btn btn-success btn-sm m-2"
-        onClick={() => props.onIncrement(props.id)}
+        onClick={() => onIncrement(id)}
         style={styles.btn}
       >
         +
       </button>
       <button
         className="btn btn-dark btn-sm m-2"
-        onClick={() => props.onDecrement(props.id)}
+        onClick={() => onDecrement(id)}
         style={styles.btn}
       >
         -
       </button>
       <button
         className="btn btn-danger btn-sm m-2 px-3"
-        onClick={() => props.onDelete(props.id)}
+        onClick={() => onDelete(id)}
       >
         Удалить
       </button>

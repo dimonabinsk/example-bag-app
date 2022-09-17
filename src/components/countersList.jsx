@@ -29,35 +29,35 @@ const CountersList = () => {
       name: "Набор минималиста",
     },
   ];
-  const [counters, setCounter] = useState(initialState);
+  const [counters, setCounters] = useState(initialState);
 
   const handlerDelete = (id) => {
     const newCounters = counters.filter((counter) => counter.id !== id);
-    setCounter(newCounters);
+    setCounters(newCounters);
   };
 
   const handlerReset = () => {
-    setCounter(initialState);
+    setCounters(initialState);
   };
 
   const handlerIncrement = (id) => {
     const incrementArray = counters.map((counter) => {
       if (id === counter.id) {
-        counter.value = counter.value + 1;
+        counter.value += 1;
       }
       return counter;
     });
-    setCounter(incrementArray);
+    setCounters(incrementArray);
   };
 
   const handlerDecrement = (id) => {
     const decrementArray = counters.map((counter) => {
       if (id === counter.id && counter.value > 0) {
-        counter.value = counter.value - 1;
+        counter.value -= 1;
       }
       return counter;
     });
-    setCounter(decrementArray);
+    setCounters(decrementArray);
   };
 
   return (
