@@ -1,9 +1,9 @@
 const styles = {
   badge: {
-    width: 90 + "px",
+    width: "90px",
   },
   btn: {
-    width: 45 + "px",
+    width: "45px",
   },
 };
 
